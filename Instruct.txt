@@ -1,0 +1,10 @@
+Assuming that you have Node installed, you can use npm to install the create-react-native-app command line utility:
+npm install -g create-react-native-app
+
+Then run the following commands to create a new React Native project called "AwesomeProject":
+create-react-native-app AwesomeProject
+
+cd AwesomeProject
+npm start
+
+This will start a development server for you, and print a QR code in your terminal
