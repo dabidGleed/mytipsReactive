@@ -1,36 +1,79 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
+import { StyleSheet, TextInput, View, Image, Button, Alert, TouchableOpacity } from 'react-native';
 
 export default class App extends React.Component {
   render() {
-    let pic = {
-      uri: '/images/logo1.png'
-    }; 
+     
     return (  
       <View style={styles.container}>
-        <View>
-          <Image source={require('./images/logo1.png')} style={{width: 120, resizeMode: 'contain'}}/>  
+        <View style={styles.imag}>
+          <Image source={require('./images/logo1.png')}  style={styles.logo}/>  
         </View> 
-        <View style={styles.ButtonVal}>
-          <Button onPress={() => { Alert.alert('You tapped the button!')}} title="Continue" />
+        <View>
+          <Image source={require('./images/background1.png')}  style={styles.backgroundImage}/>  
+        </View> 
+
+     
+        <TouchableOpacity  style={styles.buttonContainer}>
+          <text  style={styles.buttonText}>click</text>
+          </TouchableOpacity>
         </View>
-      </View>
+ 
     );
   } 
 }
 
+
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    backgroundColor: '#b0d732', 
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center', 
-    padding:20,
+    backgroundColor: '#f0f',
   },
   ButtonVal:{   
     position: 'absolute',
     bottom: 3,
-    padding: 20
-    
+    padding: 20,
+   
+  },
+  Button:{
+    backgroundColor:'#f0f',
+  },
+   backgroundImage: {
+    resizeMode: 'contain',
+    flex:1,
+    zIndex:0,
+    position:'relative'
+  },
+  logo:{
+      resizeMode: 'contain',
+      width:130,
+      zIndex:1,
+
+  },
+  imag:{
+     position:'absolute',
+      justifyContent: 'center', 
+  },
+  buttonContainer:{
+    backgroundColor: '#f0f',
+    paddingVertical:10,
+  },
+  buttonText:{
+    textAlign:'center',
+    color:'#ff0',
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
