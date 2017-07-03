@@ -1,23 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
 export default class App extends React.Component {
   render() {
-    return (
+    let pic = {
+      uri: '/images/logo1.png'
+    }; 
+    return (  
       <View style={styles.container}>
-        <Text>hello</Text>
-        <Text>Nice</Text>
-        <Text>Video</Text>
+        <View>
+          <Image source={require('./images/logo1.png')} style={{width: 120, resizeMode: 'contain'}}/>  
+        </View> 
+        <View style={styles.ButtonVal}>
+          <Button onPress={() => { Alert.alert('You tapped the button!')}} title="Continue" />
+        </View>
       </View>
     );
-  }
+  } 
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: 2,
+    backgroundColor: '#b0d732', 
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center', 
+    padding:20,
   },
+  ButtonVal:{   
+    position: 'absolute',
+    bottom: 3,
+    padding: 20
+    
+  }
 });
