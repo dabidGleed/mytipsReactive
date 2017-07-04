@@ -1,70 +1,25 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Image, Button, Alert, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, View, Navigator } from 'react-native';
+import {Actions, Scene, Router} from 'react-native-router-flux';
 
-export default class App extends React.Component {
-  render() {
-     
-    return (  
-      <View style={styles.container}>
-        <View style={styles.imag}>
-          <Image source={require('./images/logo1.png')}  style={styles.logo}/>  
-        </View> 
-        <View>
-          <Image source={require('./images/background1.png')}  style={styles.backgroundImage}/>  
-        </View> 
+import Splash from './src/components/splash/splash';
+import newPage from './src/components/newPage/newPage';
 
-     
-        <TouchableOpacity  style={styles.buttonContainer}>
-          <text  style={styles.buttonText}>click</text>
-          </TouchableOpacity>
-        </View>
- 
-    );
+const scenes = Actions.create(
+  <Scene key="root">
+    <Scene key="splash" component={Splash} initial hideNavBar/>
+    <Scene key="newPage" component={newPage} hideNavBar/>
+  </Scene> 
+);
+
+export default class MyTipsApp extends React.Component {
+  render() {     
+   return <Router scenes={scenes}/>
   } 
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center', 
-    backgroundColor: '#f0f',
-  },
-  ButtonVal:{   
-    position: 'absolute',
-    bottom: 3,
-    padding: 20,
-   
-  },
-  Button:{
-    backgroundColor:'#f0f',
-  },
-   backgroundImage: {
-    resizeMode: 'contain',
-    flex:1,
-    zIndex:0,
-    position:'relative'
-  },
-  logo:{
-      resizeMode: 'contain',
-      width:130,
-      zIndex:1,
 
-  },
-  imag:{
-     position:'absolute',
-      justifyContent: 'center', 
-  },
-  buttonContainer:{
-    backgroundColor: '#f0f',
-    paddingVertical:10,
-  },
-  buttonText:{
-    textAlign:'center',
-    color:'#ff0',
-  }
-});
 
 
 
