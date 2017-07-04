@@ -9,14 +9,14 @@ export default class Splash extends React.Component {
     return (  
       <View style={styles.container}>
         <View style={styles.imag}>
-          <Image source={require('./../../images/logo1.png')}  style={styles.logo}/>  
+          <Image source={require('../../images/logo1.png')}  style={styles.logo}/>  
         </View> 
         <View>
-          <Image source={require('./../../images/background1.png')}  style={styles.backgroundImage}/>  
+          <Image source={require('../../images/background1.png')}  style={styles.backgroundImage}/>  
         </View> 
 
      
-        <TouchableOpacity  style={styles.buttonContainer} onPress = {()=> Actions.newPage({})}>
+        <TouchableOpacity  style={styles.buttonContainer} onPress = {()=> Actions.NewPage({})}>
           <Text  style={styles.buttonText}>CONTINUE</Text>
           </TouchableOpacity>
         </View>
@@ -39,9 +39,7 @@ const styles = StyleSheet.create({
     padding: 20,
    
   },
-  Button:{
-    backgroundColor:'#f0f',
-  },
+
    backgroundImage: {
     resizeMode: 'contain',
     flex:1,
@@ -64,8 +62,8 @@ const styles = StyleSheet.create({
     paddingVertical:15,
     position: 'absolute',
     bottom: 15,
-    width:'95%', 
-    marginBottom: 120,
+    width:'50%', 
+    
   },
   buttonText:{
     textAlign:'center',
