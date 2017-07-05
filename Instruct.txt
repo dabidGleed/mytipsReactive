@@ -8,3 +8,12 @@ cd AwesomeProject
 npm start
 
 This will start a development server for you, and print a QR code in your terminal
+
+// install EXP
+npm install -g exp
+
+// build for versions
+exp start 
+
+// build apk 
+exp build:android

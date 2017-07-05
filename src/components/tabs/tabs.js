@@ -3,22 +3,10 @@ import {
   Text,
   View,
 } from 'react-native';
+import NextPage from '../nextPage/nextPage';
+import NewPage from '../newPage/newPage';
 
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
-
-/*export default React.createClass({
-  render() {
-    return <ScrollableTabView
-      style={{marginTop: 20, }}
-      initialPage={0}
-      renderTabBar={() => <ScrollableTabBar />}
-    >
-      <Text tabLabel='All'>All</Text>
-      <Text tabLabel='Male'>Male</Text>
-      <Text tabLabel='Female'>Female</Text>
-    </ScrollableTabView>;
-  },
-});*/
 
 export default class tabs extends React.Component {
   render() {
@@ -27,9 +15,8 @@ export default class tabs extends React.Component {
       initialPage={0}
       renderTabBar={() => <ScrollableTabBar />}
     >
-      <Text tabLabel='All'>All</Text>
-      <Text tabLabel='Male'>Male</Text>
-      <Text tabLabel='Female'>Female</Text>
+      <NextPage tabLabel='All' />
+      <NewPage tabLabel='All' />
     </ScrollableTabView>
   }
 }
