@@ -1,36 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
+import {Actions, Scene, Router} from 'react-native-router-flux';
 
-export default class App extends React.Component {
-  render() {
-    let pic = {
-      uri: '/images/logo1.png'
-    }; 
-    return (  
-      <View style={styles.container}>
-        <View>
-          <Image source={require('./images/logo1.png')} style={{width: 120, resizeMode: 'contain'}}/>  
-        </View> 
-        <View style={styles.ButtonVal}>
-          <Button onPress={() => { Alert.alert('You tapped the button!')}} title="Continue" />
-        </View>
-      </View>
-    );
+import splash from './src/components/splash/splash';
+import newPage from './src/components/newPage/newPage';
+import nextPage from './src/components/nextPage/nextPage';
+import tabs from './src/components/tabs/tabs';
+const scenes = Actions.create(
+  <Scene key="root">
+    <Scene key="Splash" component={splash} initial hideNavBar/>
+    <Scene key="NewPage" component={newPage} hideNavBar/>
+    <Scene key="NextPage" component={nextPage} hideNavBar/>
+    <Scene key="Tabs" component={tabs} hideNavBar/>
+  </Scene> 
+);
+
+export default class MyTipsApp extends React.Component {
+  render() {     
+   return <Router scenes={scenes}/>
   } 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 2,
-    backgroundColor: '#b0d732', 
-    alignItems: 'center',
-    justifyContent: 'center', 
-    padding:20,
-  },
-  ButtonVal:{   
-    position: 'absolute',
-    bottom: 3,
-    padding: 20
-    
-  }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
