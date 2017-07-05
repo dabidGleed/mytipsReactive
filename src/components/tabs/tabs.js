@@ -15,7 +15,7 @@ export default class tabs extends React.Component {
       initialPage={0}
       renderTabBar={() => <ScrollableTabBar />}
     >
-      <NextPage tabLabel='All' />
+      <NextPage tabLabel='male' />
       <NewPage tabLabel='All' />
     </ScrollableTabView>
   }
